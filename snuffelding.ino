@@ -159,7 +159,7 @@ void setup_sensors() {
         static int alarm_level;
 
         struct SnuffelSensor s = {
-            enabled: true,
+            enabled: false,
             id: "AQC-0-0-0-0",
             description: "CO2 sensor",
             topic_suffix: "co2",
