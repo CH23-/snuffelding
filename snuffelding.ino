@@ -16,6 +16,8 @@
 #include <ArduinoOTA.h>
 #include <math.h>
 #include <list>
+#include <soc/soc.h>
+#include <soc/rtc_cntl_reg.h>
 using namespace std;
 
 unsigned long interval;
@@ -465,6 +467,7 @@ void check_button() {
 }
 
 void setup() {
+    WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0);
     Serial.begin(115200);
     SPIFFS.begin(true);
     Wire.begin(i2c_sda, i2c_scl);
